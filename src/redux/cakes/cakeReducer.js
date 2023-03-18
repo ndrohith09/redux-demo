@@ -6,11 +6,14 @@ const initialState = {
     info: ''
 }
 
+
 const cakeReducer = (state = initialState, action) => {
+    console.log('action cake ---------> ', action , state);
     switch(action.type) {
-        case BUY_CAKE: return {
+        case BUY_CAKE: 
+        return {
             ...state,
-            numOfCakes: state.numOfCakes - 1,
+            numOfCakes: state.numOfCakes - action.payload,
             info : 'Buying cake'
         }
         case ADD_CAKE: return {
